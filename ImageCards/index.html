@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {}
+
+    .container {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inner-contaner {
+        margin: 10px;
+        width: 20%;
+        height: 90vh;
+        border-radius: 20px;
+        flex: 1;
+        transition: .2s all ease;
+    }
+
+    h3 {
+        background: rgba(0, 0, 0, 0.249);
+        text-align: center;
+        color: white;
+        font-weight: 700;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .active {
+        flex: 4;
+        
+    }
+
+    #inner-contaner-1 {
+        background-image: url(images/altumcode-PNbDkQ2DDgM-unsplash.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    #inner-contaner-2 {
+        background-image: url(images/evgeni-evgeniev-ggVH1hoQAac-unsplash.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    #inner-contaner-3 {
+        background-image: url(images/markus-spiske-MgtHZ4zlC1U-unsplash.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    #inner-contaner-4 {
+        background-image: url(images/zo-razafindramamba-ALDZ3fjhY1E-unsplash.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="inner-contaner" id="inner-contaner-1">
+            <h3>hiii</h3>
+        </div>
+        <div class="inner-contaner" id="inner-contaner-2">
+            <h3>hiii2</h3>
+        </div>
+        <div class="inner-contaner" id="inner-contaner-3">
+            <h3>hiii3</h3>
+        </div>
+        <div class="inner-contaner" id="inner-contaner-4">
+            <h3>hiii4</h3>
+        </div>
+    </div>
+</body>
+
+<script>
+    const cards = document.querySelectorAll('.inner-contaner');
+
+    function removeActiveClasses() {
+        cards.forEach(card => {
+            card.classList.remove("active")
+        });
+    }
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            removeActiveClasses();
+            card.classList.add("active")
+        });
+    })
+</script>
+
+</html>
